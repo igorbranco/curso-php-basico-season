@@ -63,8 +63,10 @@ echo "<br>";
   * strpos
   */
  
- $frase = "Aprendendo PHP";
- $novo = strpos ($frase, "PHP");
- $novo = stripos ($frase, "PHP");
+ // $frase = "Aprendendo PHP";
+ // $novo = strpos ($frase, "PHP");
+ // $novo = stripos ($frase, "PHP");
  
+
+
  var_dump($novo);
