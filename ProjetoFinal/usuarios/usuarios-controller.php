@@ -22,7 +22,7 @@ if(existeErro()) {
     store($usuario);
     success("O usuário " . $usuario['nome']. " foi cadastrado com sucesso ");
     header("location: http://localhost/ProjetoFinal/usuarios/");
-}
+} 
 } elseif ($action == 'destroy') {
     destroy($id);
 
