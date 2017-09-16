@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+$url = "http://".$_SERVER['HTTP_HOST'].'/ProjetoFinal';
+
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -14,8 +21,23 @@
                   </div>
                   <ul class="nav navbar-nav">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Usuários</a></li>
+                    
+                    <?php if(isset($_SESSION['auth'])): ?>
+                    <?php if($_SESSION['auth']['grupo'] == 'adm'): ?>   
+                    <li><a href="<?= $url ?>/usuarios/">Usuários</a></li>
+                    <?php endif; ?>
                     <li><a href="#">Conteúdos</a></li>
+                    <?php endif; ?>
+                  </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                    <?php if(isset($_SESSION['auth'])): ?>
+                    
+                    <li><a href="<?= $url ?>/auth/logout.php">Logout</a></li>
+                    
+                    <?php else: ?>
+                    <li><a href="<?= $url ?>/auth/login-form.php">Login</a></li>
+                    <?php endif; ?>
                   </ul>
                 </div>
             </nav>
